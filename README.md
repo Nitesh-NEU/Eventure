@@ -2,7 +2,7 @@
 
 > Event platform built with the MERN stack & Redux.
 
-<img src="frontend/public/images/screens.png">
+<img src="/frontend/public/images/screens.png">
 
 This project is part of my [MERN Stack Event Platform](https://www.eventify.com/mern-stack-event-platform) course. It is a full-featured event browsing and ticket purchasing platform with PayPal & credit/debit payment integrations. Experience it live at [Link]
 
