@@ -1,0 +1,15 @@
+services:
+  - name: backend
+    image: niteshmore/backend-image:latest
+    buildCommand: docker build -t niteshmore/backend-image:latest ./backend
+    env:
+      - source: .env
+        target: .env
+    ports:
+      - 5000
+
+  - name: frontend
+    image: niteshmore/frontend-image:latest
+    buildCommand: docker build -t niteshmore/frontend-image:latest ./frontend
+    ports:
+      - 3000
