@@ -2,12 +2,16 @@ version: '3'
 
 services:
   backend:
-    build: .
-    env_file:
-      .env
+    image: niteshmore/backend-image:latest
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - MONGO_URI=your-mongo-uri
+      - JWT_SECRET=your-jwt-secret
+      - PAYPAL_CLIENT_ID=your-paypal-client-id
     ports:
       - "5000:5000"
   frontend:
-    build: ./frontend
+    image: niteshmore/frontend-image:latest
     ports:
       - "3000:3000"
