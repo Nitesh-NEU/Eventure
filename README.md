@@ -76,11 +76,9 @@ To run the application using Docker Compose, follow these steps:
 
 1. Make sure you have [Docker](https://www.docker.com/get-started) installed on your machine.
 
-2. Create a `.env` file in the root directory of the project and add the required environment variables as mentioned in the [Env Variables](#env-variables) section.
+2. Open a terminal in the project's root directory.
 
-3. Open a terminal in the project's root directory.
-
-4. Run the following command to start the application using Docker Compose:
+3. Run the following command to start the application using Docker Compose:
 
     ```bash
     docker-compose up
@@ -88,17 +86,17 @@ To run the application using Docker Compose, follow these steps:
 
     This will build and start the frontend and backend services defined in the `docker-compose.yaml` file.
 
-5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to access the application.
+4. Open your browser and visit [http://localhost:3000](http://localhost:3000) to access the application.
 
-6. To stop the application, press `Ctrl + C` in the terminal where `docker-compose up` is running.
+5. To stop the application, press `Ctrl + C` in the terminal where `docker-compose up` is running.
 
-7. If you want to rebuild the images and start fresh, you can use the `--build` flag:
+6. If you want to rebuild the images and start fresh, you can use the `--build` flag:
 
     ```bash
     docker-compose up --build
     ```
 
-Note: Ensure that your MongoDB URI in the `.env` file is accessible from within the Docker containers.
+Note: Ensure that your MongoDB URI and other environment variables in the docker-compose.yaml file are properly configured.
 
 Feel free to customize the Docker Compose setup based on your specific requirements.
 
