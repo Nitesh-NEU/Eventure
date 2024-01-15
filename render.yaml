@@ -1,15 +1,22 @@
 services:
-  - name: backend
-    image: niteshmore/backend-image:latest
-    buildCommand: docker build -t niteshmore/backend-image:latest ./backend
-    env:
-      - source: .env
-        target: .env
+  - type: web
+    name: backend
+    runtime: docker
+    image:
+      url: niteshmore/backend-image:latest
+    envVars:
+      - key: PORT
+        value: 5000
     ports:
       - 5000
 
-  - name: frontend
-    image: niteshmore/frontend-image:latest
-    buildCommand: docker build -t niteshmore/frontend-image:latest ./frontend
+  - type: web
+    name: frontend
+    runtime: docker
+    image:
+      url: niteshmore/frontend-image:latest
+    envVars:
+      - key: PORT
+        value: 3000
     ports:
       - 3000
