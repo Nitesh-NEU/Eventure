@@ -1,18 +1,12 @@
 services:
   - type: web
     name: backend
-    runtime: docker
+    runtime: image
     image:
       url: niteshmore/backend-image:latest
-    envVars:
-      - key: PORT
-        value: 5000
 
   - type: web
     name: frontend
-    runtime: docker
+    runtime: image
     image:
       url: niteshmore/frontend-image:latest
-    envVars:
-      - key: PORT
-        value: 3000
