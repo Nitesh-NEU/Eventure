@@ -4,9 +4,15 @@ services:
     runtime: image
     image:
       url: niteshmore/backend-image:latest
+      creds:
+       fromRegistryCreds:
+       name: niteshmore
 
   - type: web
     name: frontend
     runtime: image
     image:
       url: niteshmore/frontend-image:latest
+      creds:
+       fromRegistryCreds:
+       name: niteshmore
