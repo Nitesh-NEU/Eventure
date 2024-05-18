@@ -1,21 +1,23 @@
-ARG NODE_VERSION=20.10.0
-FROM node:${NODE_VERSION}-alpine as base
+FROM node:20-alpine as build
 
-# Set working directory
-WORKDIR /usr/src/app  
+# Set the working directory
+WORKDIR /app
 
-# Copy package files first
-COPY package*.json ./  
-# Install dependencies
-RUN npm install  
+# Copy package.json and install dependencies
+COPY package.json .
+RUN npm install
 
-# Copy the rest of the frontend code
 COPY . .
 
-# Build React frontend
-RUN npm run build  
+# Build the application
+RUN npm run build
 
-EXPOSE 3000
+FROM nginx:stable-alpine
+COPY --from=build /app/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Start the React app
-CMD ["npm", "start"]  
+# Expose port
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
